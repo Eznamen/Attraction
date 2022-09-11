@@ -1,7 +1,7 @@
 public class Person {
-    public String name;
-    public String surname;
-    public int tickets;
+    private String name;
+    private String surname;
+    private int tickets;
 
 
 
@@ -9,6 +9,21 @@ public class Person {
         this.name = name;
         this.surname = surname;
         this.tickets = tickets;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public String getSurname() {
+        return surname;
+    }
+    public void setTickets(int tickets) {
+        this.tickets = tickets;
+
+    }
+
+    public int getTickets() {
+        return tickets;
     }
 
 }

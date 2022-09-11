@@ -6,11 +6,11 @@ import java.util.Queue;
 public class Main {
     public static List<Person> generateClients() {
         List<Person> clients = new ArrayList<>();
-        clients.add(new Person("Harry", "Potter", 7));
-        clients.add(new Person("Mark", "Twen", 12));
-        clients.add(new Person("Родион", "Раскольников", 3));
-        clients.add(new Person("Кот", "Бегемот", 4));
-        clients.add(new Person("Эраст", "Фандорин", 15));
+        clients.add(new Person("Harry", "Potter", 15));
+        clients.add(new Person("Tom", "Sawyer", 13));
+        clients.add(new Person("Родион", "Раскольников", 9));
+        clients.add(new Person("Кот", "Бегемот", 11));
+        clients.add(new Person("Эраст", "Фандорин", 7));
         return clients;
 
     }
@@ -22,11 +22,14 @@ public class Main {
 
         while (!queue.isEmpty()) {
             Person p = queue.poll();
-            System.out.println(p.name + " " + p.surname + " прокатился на аттракционе. ");
-            p.tickets = p.tickets - 1;
-            if (p.tickets != 0) {
+            System.out.println(p.getName() + " " + p.getSurname() + " прокатился на аттракционе. ");
+            int t = p.getTickets() - 1;
+            p.setTickets(t);
+
+            if (p.getTickets() > 0) {
+
                 queue.offer(p);
-            }
+            } 
         }
 
     }
